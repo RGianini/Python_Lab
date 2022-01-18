@@ -1,2 +1,4 @@
 # Python_Lab
-GUI for maintenance registration using tkinter
+
+
+1. **maintReg.pyw**: GUI for maintenance registration using tkinter
