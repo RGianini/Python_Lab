@@ -73,6 +73,8 @@ def print_hi():
 
     ef_cmp[['ITEM', 'INVOICE']] = ef_cmp['ITEM'].str.split('*', 1, expand=True)
     ef_cmp = ef_cmp.drop(['INVOICE'], axis=1)
+    ef_cmp['INVOICE_NUMBER'] = ef_cmp['INVOICE_NUMBER'].astype(str).str.replace('.', '')
+
     ef_cmp = ef_cmp[['ITEM', 'SUPPLIER', 'PICK_LIST_NUM', 'SHIPP_QTY', 'TOTAL AMOUNT', 'CURRENCY', 'INVOICE_NUMBER',
                      'SHIPPING_METHOD', 'BOOKING', 'ETD', 'ETA', 'ETA CBR', 'REF.EMBARQUE']]
 
