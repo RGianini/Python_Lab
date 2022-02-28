@@ -135,7 +135,7 @@ def plot_dwt_mach():
             sys.exit("Data invalida!")
 
         print(first_date >= datetime.date.today())
-        maintenance_data = pd.read_csv(filename, sep="\t", parse_dates=True)
+        maintenance_data = pd.read_csv(filename, sep="\t", parse_dates=True, encoding='latin-1')
         maintenance_data['DATE'] = pd.to_datetime(maintenance_data['DATE'], format='%d/%m/%Y') ###
         # maintenance_data['DATE'] = pd.to_datetime(maintenance_data['DATE']).dt.strftime('%Y-%d-%m')
         maintenance_data['DATE'] = pd.to_datetime(maintenance_data['DATE']).dt.date
