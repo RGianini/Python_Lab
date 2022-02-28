@@ -26,8 +26,11 @@ tabControl.add(tab1, text='Maintenance App')
 tabControl.add(tab2, text='KPI Report')
 tabControl.pack(expand=1, fill="both")
 
-listOfTech = ['', 'Tech1.', 'Tech2.', 'Tech3.']
-listOfLine = ["", "PTHLINHA1", "PTHLINHA2", "PTHLINHA3", "PTHLINHA4", "SMRTBR01", "LINHAPGD", "LINHAVALV"]
+fp = open("./assets/tech-list.txt")
+listOfTech = fp.read().split(',')
+fp.close()
+fp = open("./assets/line-list.txt")
+listOfLine = fp.read().split(',')
 list_of_errors = ['Invalid Date Entry (dd/mm/yyyy)!',
                   'Invalid duration entry (00h00)!',
                   'Resolution must be at least 20 characters!!']
